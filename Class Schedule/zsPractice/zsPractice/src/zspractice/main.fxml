@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="865.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zspractice.MainController">
+    <children>
+      <TableView fx:id="customerTable" layoutX="1.0" prefHeight="205.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="123.0" text="name" />
+          <TableColumn fx:id="address" prefWidth="304.0" text="address" />
+            <TableColumn fx:id="phone" prefWidth="172.0" text="phone" />
+        </columns>
+      </TableView>
+      <TextField fx:id="nameField" layoutX="86.0" layoutY="250.0" />
+      <TextField fx:id="addressField" layoutX="86.0" layoutY="288.0" />
+      <TextField fx:id="phoneField" layoutX="325.0" layoutY="250.0" />
+      <Label layoutX="31.0" layoutY="254.0" text="name" />
+      <Label layoutX="26.0" layoutY="290.0" text="address" />
+      <Label layoutX="284.0" layoutY="254.0" text="phone" />
+      <Button layoutX="511.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleSaveCustomer" text="save" />
+      <Button layoutX="126.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleNewCustomer" text="new" />
+      <Button layoutX="301.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleDeleteCustomer" text="delete" />
+      <Label layoutX="256.0" layoutY="292.0" text="ID number" />
+      <TextField fx:id="idField" disable="true" editable="false" layoutX="325.0" layoutY="286.0" />
+      <TableView fx:id="scheduleTable" layoutY="336.0" prefHeight="264.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="startColumn" prefWidth="243.0" text="Start Time" />
+            <TableColumn fx:id="endColumn" prefWidth="184.0" text="End Time" />
+            <TableColumn fx:id="idColumn" prefWidth="51.0" text="Customer ID" />
+            <TableColumn fx:id="typeColumn" prefWidth="121.0" text="Type" />
+        </columns>
+      </TableView>
+      <Button layoutX="109.0" layoutY="617.0" mnemonicParsing="false" onAction="#handleNewSchedule" text="new" />
+      <Button layoutX="287.0" layoutY="617.0" mnemonicParsing="false" onAction="#handleDeleteSchedule" text="delete" />
+      <Label layoutX="17.0" layoutY="690.0" text="start time" />
+      <Label layoutX="15.0" layoutY="732.0" text="end time" />
+      <TextField fx:id="dateYearField" layoutX="68.0" layoutY="656.0" prefHeight="25.0" prefWidth="48.0" />
+      <TextField fx:id="dateMonthField" layoutX="168.0" layoutY="656.0" prefHeight="25.0" prefWidth="30.0" />
+      <TextField fx:id="dateDayField" layoutX="235.0" layoutY="656.0" prefHeight="25.0" prefWidth="30.0" />
+      <Label layoutX="13.0" layoutY="660.0" text="Year(xxxx)" />
+      <Label layoutX="114.0" layoutY="660.0" text="Month(xx)" />
+      <Label layoutX="198.0" layoutY="660.0" text="day(xx)" />
+      <Label layoutX="30.0" layoutY="634.0" text="date" />
+      <Label layoutX="17.0" layoutY="711.0" text="hour(xx)" />
+      <TextField fx:id="startHourField" layoutX="67.0" layoutY="707.0" prefHeight="25.0" prefWidth="34.0" />
+      <TextField fx:id="startMinuteField" layoutX="161.0" layoutY="707.0" prefHeight="25.0" prefWidth="41.0" />
+      <TextField fx:id="endHourField" layoutX="67.0" layoutY="749.0" prefHeight="25.0" prefWidth="34.0" />
+      <TextField fx:id="endMinuteField" layoutX="161.0" layoutY="749.0" prefHeight="25.0" prefWidth="40.0" />
+      <Label layoutX="100.0" layoutY="711.0" text="minute(xx)" />
+      <Label layoutX="21.0" layoutY="753.0" text="hour(xx)" />
+      <Label layoutX="100.0" layoutY="753.0" text="minute(xx)" />
+      <Label layoutX="275.0" layoutY="660.0" text="Type" />
+      <RadioButton fx:id="vendorRadioButton" layoutX="325.0" layoutY="660.0" mnemonicParsing="false" onAction="#handleVendorRadio" text="Vendor">
+         <toggleGroup>
+            <ToggleGroup fx:id="typeGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="purchaserRadioButton" layoutX="400.0" layoutY="660.0" mnemonicParsing="false" onAction="#handlePurchaserRadio" text="purchaser" toggleGroup="$typeGroup" />
+      <Label layoutX="237.0" layoutY="711.0" text="Customer Number" />
+      <TextField fx:id="customerIdField" disable="true" layoutX="355.0" layoutY="707.0" prefHeight="25.0" prefWidth="44.0" />
+      <Button layoutX="431.0" layoutY="707.0" mnemonicParsing="false" onAction="#handleSaveSchedule" prefHeight="25.0" prefWidth="120.0" text="Save" />
+      <Label layoutX="235.0" layoutY="753.0" text="Schedule Number" />
+      <TextField fx:id="scheduleIdField" disable="true" layoutX="355.0" layoutY="749.0" prefHeight="25.0" prefWidth="44.0" />
+      <Button layoutX="257.0" layoutY="805.0" mnemonicParsing="false" onAction="#handleExit" text="Exit and return" />
+    </children>
+</AnchorPane>
